@@ -16,8 +16,7 @@ Answer the following questions in the provided markdown file before turning in t
   use ReactDOM.createRoot
 
 - What are some other popular frontend frameworks?
-  Vue.js – A progressive framework with a flexible core and a focus on reactivity.
-  Angular – A full-fledged frontend framework developed by Google with two-way data binding.
+  Vue.js
   Svelte – A compiler-based framework that generates highly optimized JavaScript code.
   Solid.js – A reactive framework similar to React but with fine-grained reactivity for better performance.
   Preact – A lightweight alternative to React with a similar API but smaller size (~3KB).
