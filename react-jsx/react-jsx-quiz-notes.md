@@ -8,7 +8,7 @@ Answer the following questions in the provided markdown file before turning in t
   JSX (JavaScript XML) is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript. JSX makes it easier to describe UI structures in a more readable and declarative way.
 
 - How does React use JSX to render components?
-  React.createElement
+  When a component returns JSX, React interprets it as a structure of elements and efficiently maps it to real DOM nodes during rendering.
 
 ## Notes
 
