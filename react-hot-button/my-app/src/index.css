@@ -1,0 +1,46 @@
+.hot-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.hot-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  background-color: #333;
+}
+
+.hot-button.blue {
+  background-color: #007bff;
+}
+
+.hot-button.purple {
+  background-color: #6f42c1;
+}
+
+.hot-button.pink {
+  background-color: #d63384;
+}
+
+.hot-button.orange {
+  background-color: #fd7e14;
+}
+
+.hot-button.yellow {
+  background-color: #ffc107;
+  color: black;
+}
+
+.hot-button.white {
+  background-color: #f8f9fa;
+  color: black;
+}
+
+.click-count {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
