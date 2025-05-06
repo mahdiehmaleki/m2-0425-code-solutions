@@ -9,14 +9,28 @@ const items = [
 ];
 
 export default function RotatingBanner() {
-  const [currentIndex /*, setCurrentIndex */] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  function handleNext() {
+    setCurrentIndex((currentIndex + 1) % items.length);
+  }
 
+  function handlePrev() {
+    setCurrentIndex((currentIndex - 1 + items.length) % items.length);
+  }
+
+  function handleSelect(index: number) {
+    setCurrentIndex(index);
+  }
   return (
     <>
       <BannerDisplay item={items[currentIndex]} />
-      <PrevButton />
-      <Indicators count={items.length} currentIndex={currentIndex} />
-      <NextButton />
+      <PrevButton onClick={handlePrev} />
+      <Indicators
+        count={items.length}
+        currentIndex={currentIndex}
+        onSelect={handleSelect}
+      />
+      <NextButton onClick={handleNext} />
     </>
   );
 }
@@ -31,27 +45,31 @@ function BannerDisplay({ item }: BannerProps) {
 }
 
 // Prev button (no props needed)
-function PrevButton() {
-  return <button>Prev</button>;
+function PrevButton({ onClick }: { onClick: () => void }) {
+  return <button onClick={onClick}>Prev</button>;
 }
 
 // Next button (no props needed)
-function NextButton() {
-  return <button>Next</button>;
+function NextButton({ onClick }: { onClick: () => void }) {
+  return <button onClick={onClick}>Next</button>;
 }
 
 // Define prop types
 type IndicatorsProps = {
   count: number;
   currentIndex: number;
+  onSelect: (index: number) => void;
 };
 
 // Indicator buttons
-function Indicators({ count, currentIndex }: IndicatorsProps) {
+function Indicators({ count, currentIndex, onSelect }: IndicatorsProps) {
   const buttons = [];
   for (let i = 0; i < count; i++) {
     buttons.push(
-      <button key={i} className={i === currentIndex ? 'active' : ''}>
+      <button
+        key={i}
+        className={i === currentIndex ? 'active' : ''}
+        onClick={() => onSelect(i)}>
         {i + 1}
       </button>
     );
