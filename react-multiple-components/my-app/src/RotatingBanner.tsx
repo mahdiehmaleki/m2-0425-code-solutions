@@ -1,13 +1,15 @@
+import { useState } from 'react';
+const items = [
+  'Aardvark',
+  'Bengal',
+  'Caterpillar',
+  'Dromedary',
+  'Elephant',
+  'Ferret',
+];
+
 export default function RotatingBanner() {
-  const items = [
-    'Aardvark',
-    'Bengal',
-    'Caterpillar',
-    'Dromedary',
-    'Elephant',
-    'Ferret',
-  ];
-  const currentIndex = 0;
+  const [currentIndex /*, setCurrentIndex */] = useState(0);
 
   return (
     <>
