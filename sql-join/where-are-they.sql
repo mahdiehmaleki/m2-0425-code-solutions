@@ -1,0 +1,1 @@
+select a.line1 as "line1", a.district as "district_name", ci.name as "city_name", co.name as "country_name" from "addresses" as "a" join "cities" as "ci" using("cityId") join "countries" as "co" using("countryId")
